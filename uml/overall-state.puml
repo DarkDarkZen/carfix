@@ -1,0 +1,35 @@
+@startuml
+scale 700 width
+
+left to right direction
+
+[*] -down-> Start
+Start -down-> PreICO
+Start -left-> Paused
+Paused -right-> Start
+
+PreICO -down-> ICO
+PreICO -right-> Refund
+PreICO -left-> Paused
+Paused -right-> PreICO
+
+ICO -right-> Refund
+ICO -down-> Success
+ICO -left-> Paused
+Paused -right-> ICO
+
+Success -left-> Paused
+Paused -Right-> Success
+Success -down-> Migration
+
+Migration -left-> Paused
+Paused -right-> Migration
+
+Refund -up-> Paused
+Paused -down-> Refund
+
+Paused -down-> Stopped
+
+Stopped -down-> [*]
+
+@enduml

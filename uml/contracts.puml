@@ -1,0 +1,14 @@
+@startuml
+scale 550 width
+
+left to right direction
+
+node Proxy
+node ICO
+node Tokens
+node Money
+
+Proxy -- ICO
+ICO -- Tokens
+ICO -- Money
+@enduml

@@ -1,0 +1,24 @@
+@startuml
+scale 550 width
+
+start
+
+:PreICO;
+
+if (By t0 1.5M collected?) then (yes)
+    :ICO;
+else (yes)
+    :Refund;
+    stop
+endif
+
+if (By t1 all 43.5M collected?) then (yes)
+    :Success;
+else (no)
+    :Refund;
+    stop
+endif
+
+stop
+
+@enduml
