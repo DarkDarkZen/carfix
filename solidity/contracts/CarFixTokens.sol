@@ -1,7 +1,13 @@
-pragma solidity ^0.4.4;
+pragma solidity ^0.4.17;
 
-contract CarFixTokens {
+//import "truffle/StandardToken.sol";
 
-function CarFixTokens() { }
+contract CarFixTokens /*is StandardToken*/  {
+
+  string public name = "CarFix Token";
+  string public symbol = "CFT";
+  uint public decimals = 8;
+
+  function CarFixTokens() public { }
 
 }
