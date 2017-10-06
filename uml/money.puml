@@ -7,11 +7,7 @@ Active -up-> Paused
 Paused -down-> Active
 Active -down-> Refund
 
-Active -> Success
-Success -up-> Paused
-Paused -down-> Success
-
-Success -> Withdraw
+Active -> Withdraw
 
 Withdraw -> Paused
 Paused -> Withdraw
