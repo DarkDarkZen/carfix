@@ -1,0 +1,18 @@
+@startuml
+scale 550 width
+
+[*] -> Active
+
+Active -up-> Paused
+Paused -down-> Active
+
+Active -> Migration
+
+Migration -> Paused
+Paused -> Migration
+
+Paused -> Stopped
+
+Stopped -> [*]
+
+@enduml

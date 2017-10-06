@@ -1,0 +1,22 @@
+@startuml
+scale 550 width
+
+[*] -> Active
+
+Active -up-> Paused
+Paused -down-> Active
+Active -down-> Refund
+
+Active -> Withdraw
+
+Withdraw -> Paused
+Paused -> Withdraw
+
+Refund -> Paused
+Paused -> Refund
+
+Paused -> Stopped
+
+Stopped -> [*]
+
+@enduml

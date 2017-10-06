@@ -1,0 +1,95 @@
+@startuml
+scale 800 width
+
+left to right direction
+
+state Paused {
+    Paused: Proxy - Paused
+    Paused: ICO - Paused
+    Paused: Tokens - Paused
+    Paused: Money - Paused
+}
+
+state PreICO {
+    PreICO: Proxy - Active
+    PreICO: ICO - Active
+    PreICO: Tokens - Active
+    PreICO: Money - Active
+}
+
+state ICO {
+    ICO: Proxy - Active
+    ICO: ICO - Active
+    ICO: Tokens - Active
+    ICO: Money - Active
+}
+
+state Stopped {
+    Stopped: Proxy - Stopped
+    Stopped: ICO - Stopped
+    Stopped: Tokens - Stopped
+    Stopped: Money - Stopped
+}
+
+state Refund {
+    Refund: Proxy - Active
+    Refund: ICO - Refund
+    Refund: Tokens - Paused
+    Refund: Money - Refund
+}
+
+state Success {
+    Success: Proxy - Active
+    Success: ICO - Success
+    Success: Tokens - Active
+    Success: Money - Withdraw
+}
+
+state Migration {
+    Migration: Proxy - Paused
+    Migration: ICO - Paused
+    Migration: Tokens - Migration
+    Migration: Money - Paused
+}
+
+state Update {
+    Update: Proxy - Update
+    Update: ICO - Paused
+    Update: Tokens - Paused
+    Update: Money - Paused
+}
+
+
+' Happy path
+[*] -down-> Paused
+PreICO -down-> ICO
+ICO -down-> Success
+Success -down-> Migration
+Migration -left-> Paused
+Paused -down-> Stopped
+Stopped -down-> [*]
+
+' Refund
+PreICO -right-> Refund
+ICO -right-> Refund
+
+' Pause pairs
+PreICO -left-> Paused
+Paused -right-> PreICO
+
+ICO -left-> Paused
+Paused -right-> ICO
+
+Success -left-> Paused
+Paused -Right-> Success
+
+Refund -up-> Paused
+Paused -down-> Refund
+
+Paused -right-> Migration
+
+' Update
+Paused --> Update
+Update --> Paused
+
+@enduml

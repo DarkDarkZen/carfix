@@ -1,0 +1,32 @@
+@startuml
+scale 550 width
+
+left to right direction
+
+[*] -> Active
+
+state Active {
+    [*] -> Active_25
+    Active_25 -> Active_35
+    Active_35 -> Active_40
+    Active_40 -> Active_45
+    Active_45 -> Active_50
+    Active_50 -> Active_55
+}
+
+Active -up-> Paused
+Paused -down-> Active
+Active -down-> Refund
+
+Active -> Success
+Success -up-> Paused
+Paused -down-> Success
+
+Refund -> Paused
+Paused -> Refund
+
+Paused -> Stopped
+
+Stopped -> [*]
+
+@enduml
