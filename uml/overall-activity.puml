@@ -4,15 +4,17 @@ scale 550 width
 start
 
 :PreICO;
+note right: `t0` is a pre-ICO end time
 
-if (By t0 1.5M collected?) then (yes)
+if (By `t0` 1.5M collected?) then (yes)
     :ICO;
-else (yes)
+    note right: `t1` is an ICO end time
+else (no)
     :Refund;
     stop
 endif
 
-if (By t1 all 43.5M collected?) then (yes)
+if (By `t1` all 43.5M collected?) then (yes)
     :Success;
 else (no)
     :Refund;
