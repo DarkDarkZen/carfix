@@ -1,7 +1,10 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.0;
 
-contract CarFixICO {
+import 'zeppelin-solidity/contracts/ownership/Ownable.sol';
+import 'zeppelin-solidity/contracts/crowdsale/CappedCrowdsale.sol';
 
-function CarFixICO() public { }
+contract CarFixICO is Owned, CappedCrowdsale {
+    function CarFixICO(){
 
+    }
 }
