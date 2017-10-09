@@ -1,8 +1,8 @@
-pragma solidity ^0.4.17;
+pragma solidity ^0.4.0;
 
-//import "truffle/StandardToken.sol";
+import "zeppelin-solidity/contracts/token/StandardToken.sol";
 
-contract CarFixTokens /*is StandardToken*/  {
+contract CarFixTokens is StandardToken {
 
   string public name = "CarFix Token";
   string public symbol = "CFT";
