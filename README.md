@@ -10,12 +10,11 @@ This README would normally document whatever steps are necessary to get your app
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+```$xslt
+npm install -g truffle yarn
+cd solidity/
+yarn install
+```
 
 ### Contribution guidelines ###
 

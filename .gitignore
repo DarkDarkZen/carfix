@@ -1,3 +1,4 @@
-node_modules
-build
-CMakeLists.txt.user
+.idea/
+solidity/node_modules
+solidity/build
+solidity/CMakeLists.txt.user
