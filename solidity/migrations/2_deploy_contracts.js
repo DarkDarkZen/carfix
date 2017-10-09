@@ -1,8 +1,7 @@
-var ConvertLib = artifacts.require("./ConvertLib.sol");
-var MetaCoin = artifacts.require("./MetaCoin.sol");
+var CarFixProxy = artifacts.require("./CarFixProxy.sol");
+var CarFixToken = artifacts.require("./CarFixToken.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(ConvertLib);
-  deployer.link(ConvertLib, MetaCoin);
-  deployer.deploy(MetaCoin);
+  deployer.deploy(CarFixProxy);
+  deployer.deploy(CarFixToken);
 };
