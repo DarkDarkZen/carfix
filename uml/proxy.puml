@@ -6,11 +6,10 @@ scale 550 width
 Active -up-> Paused
 Paused -down-> Active
 
-Active -down-> Update
-Update -up-> Active
-
-
 Paused -> Stopped
+Paused -down-> Update
+
+Update -up-> Paused
 
 Stopped -> [*]
 
